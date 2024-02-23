@@ -36,6 +36,7 @@
 .gallery a:hover {
   cursor: pointer;
 }
+
 .gallery a .gallery__figcaption {
   display: grid;
   width: 100%;
