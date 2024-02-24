@@ -20,6 +20,7 @@ searchForm.addEventListener("submit", (e) => {
           createHTML(res.hits);
         })
         .catch((error)=> {
+          document.querySelector('.gallery').innerHTML = '';
           console.error(error.message);
           resultError(error.message);
         });
