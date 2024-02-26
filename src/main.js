@@ -17,6 +17,9 @@ searchForm.addEventListener("submit", (e) => {
 
       images.getImages(searchInput.value.trim())
         .then((res) => {
+          if (parseInt(res.totalHits) <= 0){
+            throw new Error('Sorry, there are no images matching your search query. Please try again!');
+          }
           createHTML(res.hits);
         })
         .catch((error)=> {

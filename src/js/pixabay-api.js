@@ -14,15 +14,8 @@ const INSTANCE =  axios.create({
 });
 
 export const images = {
-
   async getImages(inputResult) {
-    return await INSTANCE.get(`?key=${key}&q=${encodeURIComponent(inputResult)}`, {params: params})
-      .then((response) => {
-        if (parseInt(response.data.totalHits) <= 0){
-          throw new Error('Sorry, there are no images matching your search query. Please try again!');
-        }
-        return response.data;
-      })
+    const response = await INSTANCE.get(`?key=${key}&q=${encodeURIComponent(inputResult)}`, {params: params});
+    return response.data;
   }
-
 }
